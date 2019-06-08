@@ -27,14 +27,14 @@ class BurgerBuilder extends Component {
 	};
 
 	componentDidMount() {
-		axios
-			.get('https://burger-7b450.firebaseio.com/ingredients.json')
-			.then(response => {
-				this.setState({ ingredients: response.data });
-			})
-			.catch(error => {
-				this.setState({ error: true });
-			});
+		// axios
+		// 	.get('https://burger-7b450.firebaseio.com/ingredients.json')
+		// 	.then(response => {
+		// 		this.setState({ ingredients: response.data });
+		// 	})
+		// 	.catch(error => {
+		// 		this.setState({ error: true });
+		// 	});
 	}
 
 	updatePurchaseState(ingredients) {
