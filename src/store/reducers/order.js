@@ -31,6 +31,7 @@ const purchaseBurgerFail = (state, action) => {
 const fetchOrdersSuccess = (state, action) => {
 	return updateObject(state, { orders: action.orders, loading: false });
 };
+
 const fetchOrdersStart = (state, action) => {
 	return updateObject(state, { loading: true });
 };
