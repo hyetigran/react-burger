@@ -65,7 +65,7 @@ class Auth extends Component {
 		this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup);
 	};
 
-	swithAuthModeHandler = () => {
+	switchAuthModeHandler = () => {
 		this.setState(prevState => {
 			return { isSignup: !prevState.isSignup };
 		});
@@ -100,7 +100,7 @@ class Auth extends Component {
 			errorMessage = <p>{this.props.error.message}</p>;
 		}
 		let authRedirect = null;
-		if (this.props.isAuthenticate) {
+		if (this.props.isAuthenticated) {
 			authRedirect = <Redirect to={this.props.authRedirectPath} />;
 		}
 		return (
@@ -111,7 +111,7 @@ class Auth extends Component {
 					{form}
 					<Button btnType="Success">SUBMIT</Button>
 				</form>
-				<Button clicked={this.swithAuthModeHandler} btnType="Danger">
+				<Button clicked={this.switchAuthModeHandler} btnType="Danger">
 					Switch to {this.state.isSignup ? 'SIGNIN' : 'SIGNUP'}
 				</Button>
 			</div>
@@ -122,7 +122,7 @@ const mapStateToProps = state => {
 	return {
 		loading: state.auth.loading,
 		error: state.auth.error,
-		isAuthenticate: state.auth.token !== null,
+		isAuthenticated: state.auth.token !== null,
 		buildingBurger: state.burgerBuilder.building,
 		authRedirectPath: state.auth.authRedirectPath
 	};
